@@ -10,8 +10,7 @@ puts 'Establishing connection to database ...'
 ActiveRecord::Base.establish_connection(
   adapter: 'postgresql',
   database: 'ar_exercises',
-  username: 'development',
-  password: 'development',
+  username: 'kellyatmore',
   host: 'localhost',
   port: 5432,
   pool: 5,
@@ -31,6 +30,7 @@ ActiveRecord::Schema.define do
     t.column :mens_apparel, :boolean
     t.column :womens_apparel, :boolean
     t.timestamps null: false
+  
   end
   create_table :employees do |table|
     table.references :store
@@ -38,6 +38,8 @@ ActiveRecord::Schema.define do
     table.column :last_name, :string
     table.column :hourly_rate, :integer
     table.timestamps null: false
+    
+    
   end
 end
 
